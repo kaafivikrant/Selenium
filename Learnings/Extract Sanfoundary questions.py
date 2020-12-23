@@ -13,7 +13,7 @@ options.binary_location = "C:/Program Files (x86)/BraveSoftware/Brave-Browser/Ap
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 driver = webdriver.Chrome(options=options,executable_path=PATH)
 
-driver.get("https://www.dypcoeakurdi.ac.in/courses/departments/post-graduation-computer-engineering-colleges-india/faculty")
+driver.get("https://www.sanfoundry.com/vhdl-questions-answers-eda-tools/")
 print(driver.title)
 print('\n')
 
@@ -23,14 +23,14 @@ print('\n')
 
 try:
     main = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "item-page"))
+        EC.presence_of_element_located((By.CLASS_NAME, "inside-article"))
     )
 
-    articles = main.find_elements_by_class_name("media")
-    for media in articles:
-        header = media.find_element_by_class_name("media-body")
-        print(header.text)
-        print('\n')
+    header = main.find_element_by_class_name("entry-content")
+
+    print(header.text)
+    
+    print('\n')
 
 finally:
     driver.quit()
